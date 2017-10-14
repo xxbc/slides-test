@@ -1,0 +1,16 @@
+title: slides
+baseurl: "/slides"
+url: "http://janstuemmel.de/slides"
+
+collections:
+  slides:
+    output: true
+    permalink: /:path
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "slides"
+    values:
+      layout: "slides"

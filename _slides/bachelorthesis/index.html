@@ -1,0 +1,127 @@
+---
+title: Bachelorthesis
+description: Bachelorthesis about medical standards
+theme: white
+date: 2017-07-20
+reveal_config:
+  controls: false
+  progress: true
+  transition: slide
+---
+
+<section data-markdown>
+# Bachelorarbeit
+Interoperabler Datenaustausch von Medizindaten unter
+Berücksichtigung etablierter Standards
+\- Konzept und prototypische Implementierung -
+### Jan Stümmel
+TU Berlin
+
+25.07.2017
+</section>
+
+<section>
+<p>Quellcode verfügbar auf Github (MIT Lizenz)<p>
+<p>
+  <a href="https://github.com/janstuemmel/on-fhir">OnFhir</a>
+  <br><small>iOS App</small>
+</p>
+<p>
+  <a href="https://github.com/janstuemmel/campfhir-server">CampFhir Server</a>
+  <br><small>Server Backend und Frontend</small>
+</p>
+<p>
+  <a href="https://github.com/janstuemmel/fhir-proof">FhirProof</a>
+  <br><small>Bibliothek zur Überprüfung von FHIR Resources</small>
+</p>
+</section>
+
+<section data-markdown>
+# DEMO
+</section>
+
+
+<section>
+<img src="arch.png" style="height: 60vh"/>
+<p>Aufbau der Programme</p>
+</section>
+
+<section data-markdown>
+```json
+{
+  "resourceType": "Patient",
+  "id" : "23434",
+  "meta" : {
+    "versionId" : "12",
+    "lastUpdated" : "2014-08-18T15:43:30Z"
+  },
+  "text": {
+    "status": "generated",
+    "div": "<!-- Snipped for Brevity -->"
+  },
+  "extension": [
+    {
+      "url": "http://example.org/consent#trials",
+      "valueCode": "renal"
+    }
+  ],
+  "identifier": [
+    {
+      "use": "usual",
+      "label": "MRN",
+      "system": "http://www.goodhealth.org/identifiers/mrn",
+      "value": "123456"
+    }
+  ],
+  "name": [
+    {
+      "family": [
+        "Levin"
+      ],
+      "given": [
+        "Henry"
+      ],
+      "suffix": [
+        "The 7th"
+      ]
+    }
+  ],
+  "gender": {
+    "text": "Male"
+  },
+  "birthDate": "1932-09-24",
+  "active": true
+}
+```
+Beispiel einer Patient Resource
+</section>
+
+<section data-markdown>
+# Ergebnisse
+</section>
+
+<section data-markdown>
+#### Standard
+## HL7 FHIR
+
+* deckt viele Anwendungfälle ab
+* flexibel über Extensions
+* leicht zu integrieren
+* basiert auf bekannten Webtechnologien
+</section>
+
+<section data-markdown>
+#### Plattform
+## iOS HealthKit
+* aggregiert gesundheitsrelevante Daten
+* bietet Schnittstelle zum Austausch
+* Zugriff auf Samples muss einzeln freigegeben werden
+</section>
+
+<section data-markdown>
+#### Ökosystem
+## Javascript
+* React Native für mobile Applikation
+* Nodejs für Server
+* React für Frontend
+</section>
